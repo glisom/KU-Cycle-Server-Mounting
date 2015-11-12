@@ -8,7 +8,7 @@
 mkdir /Volumes/EECS
 sshfs <eecs_account_name>@cycle1.eecs.ku.edu:/home/<eecs_account_name> /Volumes/<Name_of_Volume> -o volname=<Name_of_Volume>
 ```
-4. Lastly open your terminal and run
+4. Lastly open your .profile and add somewhere
 
 `alias start_eecs='sh /usr/local/bin/<whatever_you_want>'`
 
