@@ -5,8 +5,13 @@
 3. Inside the script add this:
 ```
 #!/bin/bash
-mkdir /Volumes/EECS
-sshfs <eecs_account_name>@cycle1.eecs.ku.edu:/home/<eecs_account_name> /Volumes/<Name_of_Volume> -o volname=<Name_of_Volume>
+DIR="/Volumes/EECS"
+if [[ -f $DIR ]]; then
+    echo "<PASSWORD>" | sshfs <username>@cycle1.eecs.ku.edu:/home/<username> /Volumes/EECS -o volname=EECS -o password_stdin
+else
+    mkdir /Volumes/EECS
+    echo "<PASSWORD>" | sshfs <username>@cycle1.eecs.ku.edu:/home/<username> /Volumes/EECS -o volname=EECS -o password_stdin
+fi
 ```
 4. Lastly open your .profile and add somewhere
 
